@@ -1,4 +1,4 @@
-var ctrl = require('../app_server/users');
+var ctrl = require('../users');
 
 module.exports = function(app) {
   app.use('/users', ctrl.index);

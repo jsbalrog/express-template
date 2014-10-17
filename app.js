@@ -17,10 +17,10 @@ var server = require('http').createServer(app);
 // Set port
 app.set('port', process.env.PORT || 3000);
 // Set view location and view engine
-app.set('views', path.join(__dirname, '/app_server/views'));
+app.set('views', path.join(__dirname, '/server/views'));
 app.set('view engine', 'jade');
 // Routing
-require('./routes')(app);
+require('./server/routes')(app);
 
 // Start server
 server.listen(app.get('port'), function () {
