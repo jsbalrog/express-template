@@ -1,5 +1,5 @@
-var ctrl = require('../app_server/controllers/main');
+var ctrl = require('../app_server/main');
 
 module.exports = function(app) {
-  app.get('/', ctrl.index);
+  app.use('/', ctrl.index);
 };
