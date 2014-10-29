@@ -16,9 +16,14 @@ var server = require('http').createServer(app);
 
 // Set port
 app.set('port', process.env.PORT || 3000);
+
 // Set view location and view engine
 app.set('views', path.join(__dirname, '/server/views'));
 app.set('view engine', 'jade');
+
+// Static directory
+app.use(express.static(__dirname + '/public'));
+
 // Routing
 require('./server/routes')(app);
 
