@@ -1,3 +1,5 @@
+'use strict';
+
 var ctrl = require('../users');
 
 module.exports = function(router) {
