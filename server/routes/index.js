@@ -1,5 +1,5 @@
-module.exports = function(app) {
-  require('./users')(app);
+module.exports = function(router) {
+  require('./users')(router);
   // Otherwise, go to the home page
-  require('./main')(app);
+  require('./main')(router);
 };

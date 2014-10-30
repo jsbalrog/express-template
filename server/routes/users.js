@@ -1,5 +1,5 @@
 var ctrl = require('../users');
 
-module.exports = function(app) {
-  app.use('/users', ctrl.index);
+module.exports = function(router) {
+  router.get('/users', ctrl.index);
 };

@@ -8,6 +8,7 @@
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var express = require('express');
+var router = express.Router();
 var path = require('path');
 
 // Setup server
@@ -25,7 +26,10 @@ app.set('view engine', 'jade');
 app.use(express.static(__dirname + '/public'));
 
 // Routing
-require('./server/routes')(app);
+// Use the router for the default namespace
+app.use('/', router);
+// Require in our own routing middleware
+require('./server/routes')(router);
 
 // Start server
 server.listen(app.get('port'), function () {
